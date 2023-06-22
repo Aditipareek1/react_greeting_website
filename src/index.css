@@ -5,8 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image : url("https://picsum.photos/1550/715") ;
+  align-content: center;
 }
 
+.container{
+  position: center;
+  margin: auto;
+  margin-top: 40vh;
+  background-color: white;
+  /* height: 100vh; */
+  width: 30rem;
+  text-align: center;
+  padding: 1px;
+  border-radius: 10px;
+}
+.greet{
+  color:chartreuse;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

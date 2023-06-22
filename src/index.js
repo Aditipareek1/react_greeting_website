@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reactDOM from 'react-dom/client'
+import './index.css'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+let msg="";
+let msgStyle ={};
+const currHrs = new Date().getHours();
+if(currHrs >= 16){
+  msg = "Good Evening"
+  msgStyle.color = "green"
+}
+else if(currHrs <16 && currHrs>=12){
+  msg = "Good Afternoon"
+  msgStyle.color = "red"
+}
+else{
+  msg = "Good Morning"
+  msgStyle.color = "blue"
+}
+
+
+const root = reactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <>
+    <div className="container">
+        <h1>Hello Sir,
+          <span className="greet" style={msgStyle}>
+          {` ${msg}`}
+          </span>
+        </h1>
+    </div>
+  </>
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+// reactDOM.render(
+//   <>
+//     <div className="container">
+//         <h1>Hello Sir,
+//           <span className="greet" style={{color:msgStyle}}>
+//           {` ${msg}`}
+//           </span>
+//         </h1>
+//     </div>
+//   </>,
+//   document.getElementById('root')
+// )
